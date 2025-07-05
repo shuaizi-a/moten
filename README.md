@@ -23,3 +23,6 @@ pnpm add cz-vinyl --save-dev -w
 ```
 pnpm add commitizen --save-dev -w
 ```
+
+- 提交规范
+  > https://commitlint.js.org/guides/local-setup.html
