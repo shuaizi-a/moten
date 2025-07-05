@@ -24,11 +24,16 @@
     }
   },
   "scripts": {
-    "build": "pnpm build:vue2 && pnpm build:vue3",
-    "build:vue2": "pnpm switch:vue2 && vue-tsc -b && vite build",
-    "build:vue3": "pnpm switch:vue3 && vue-tsc -b && vite build",
+    "dev": "pnpm switch:vue3 && vue-tsc && vite build --watch",
+    "build": "pnpm clear:dist && pnpm build:vue3 && pnpm build:vue2",
+    "build:vue3": "pnpm switch:vue3 && vue-tsc && vite build",
+    "build:vue2": "pnpm switch:vue2 && vue-tsc && vite build",
+    "switch:vue3": "vue-demi-switch 3 vue3",
     "switch:vue2": "vue-demi-switch 2 vue2",
-    "switch:vue3": "vue-demi-switch 3 vue3"
+    "clear": "rimraf dist ./node_modules",
+    "clear:dist": "rimraf dist",
+    "test": "pnpm switch:vue3 && vitest --run",
+    "coverage": "pnpm switch:vue3 && vitest run --coverage"
   },
   "dependencies": {
     "@vue/composition-api": "^1.7.2",
@@ -51,8 +56,13 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.3",
     "@vue/tsconfig": "^0.7.0",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "sass": "^1.77.2",
+    "tailwindcss": "^3.4.3",
     "typescript": "~5.8.3",
     "vite": "^6.3.5",
+    "vitest": "^3.2.4",
     "vue-tsc": "^2.2.8"
   }
 }

@@ -17,10 +17,14 @@ export default defineComponent({
 </script>
 
 <template>
-  <img :src="src" alt="" />
+  <div>
+    <h1 class="text-[#50d71e] text-[50px]">标题</h1>
+    <img :src="src" alt="" />
+  </div>
+
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 img {
   width: 200px;
   height: 200px;

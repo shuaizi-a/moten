@@ -9,6 +9,7 @@
     "pnpm": ">=8.0.0"
   },
   "scripts": {
+    "dev": "pnpm -F @moten/editor dev",
     "commit": "git add . && git-cz",
     "in": "pnpm i -r",
     "ui:build": "pnpm -F @moten/ui build",
