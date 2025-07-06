@@ -1,7 +1,7 @@
 import { App } from "vue-demi";
 
-import "./assets/styles/index.scss";
 import "./style.css";
+import "./assets/styles/index.scss";
 
 import MoImage from "@/components/image";
 import imageSchema from "@/components/image/schema";

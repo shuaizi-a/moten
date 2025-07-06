@@ -4,7 +4,7 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-packageExtensionsChecksum: 75d61a57a744b55761869b911d75f3e8
+packageExtensionsChecksum: 07ffdd478721b21a38b20796455f7d97
 
 importers:
 
@@ -265,7 +265,7 @@ importers:
         version: 3.5.17
       '@vue/test-utils':
         specifier: ^2.4.6
-        version: 2.4.6
+        version: 2.4.6(typescript@5.8.3)
       autoprefixer:
         specifier: ^10.4.19
         version: 10.4.21(postcss@8.5.6)
@@ -4247,11 +4247,14 @@ packages:
   /@vue/shared@3.5.17:
     resolution: {integrity: sha512-CabR+UN630VnsJO/jHWYBC1YVXyMq94KKp6iF5MQgZJs5I8cmjw6oVMO1oDbtBkENSHSSn/UadWlW/OAgdmKrg==}
 
-  /@vue/test-utils@2.4.6:
+  /@vue/test-utils@2.4.6(typescript@5.8.3):
     resolution: {integrity: sha512-FMxEjOpYNYiFe0GkaHsnJPXFHxQ6m4t8vI/ElPGpMWxZKpmRvQ33OIrvRXemy6yha03RxhOlQuy+gZMC3CQSow==}
     dependencies:
       js-beautify: 1.15.4
+      vue: 3.5.17(typescript@5.8.3)
       vue-component-type-helpers: 2.2.12
+    transitivePeerDependencies:
+      - typescript
     dev: true
 
   /@vue/tsconfig@0.7.0(typescript@5.8.3)(vue@3.5.17):
