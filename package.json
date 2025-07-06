@@ -9,10 +9,12 @@
     "pnpm": ">=8.0.0"
   },
   "scripts": {
-    "dev": "pnpm -F @moten/editor dev",
+    "dev": "node ./scripts/dev.js",
     "commit": "git add . && git-cz",
     "in": "pnpm i -r",
     "ui:build": "pnpm -F @moten/ui build",
+    "ui": "pnpm -F @moten/ui dev",
+    "editor": "pnpm -F @moten/editor dev",
     "clear": "rimraf --glob ./node_modules ./packages/**/node_modules ./packages/**/**/node_modules ./packages/**/dist",
     "play:vue3": "pnpm -F @moten/ui build:vue3 && pnpm -F @moten/playground-vue3 dev",
     "play:vue2": "pnpm -F @moten/ui build:vue2 && pnpm -F @moten/playground-vue2 dev",

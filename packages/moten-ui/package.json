@@ -8,19 +8,21 @@
   "exports": {
     ".": {
       "import": "./dist/vue3/moten.js",
-      "require": "./dist/vue3/moten.umd.cjs"
+      "require": "./dist/vue3/moten.umd.cjs",
+      "types": "./dist/vue3/main.d.ts"
     },
     "./style": {
-      "import": "./dist/vue3/moten.css",
-      "require": "./dist/vue3/moten.css"
+      "import": "./dist/vue3/style.css",
+      "require": "./dist/vue3/style.css"
     },
     "./vue2": {
       "import": "./dist/vue2/moten.js",
-      "require": "./dist/vue2/moten.umd.cjs"
+      "require": "./dist/vue2/moten.umd.cjs",
+      "types": "./dist/vue2/main.d.ts"
     },
     "./vue2/style": {
-      "import": "./dist/vue2/moten.css",
-      "require": "./dist/vue2/moten.css"
+      "import": "./dist/vue2/style.css",
+      "require": "./dist/vue2/style.css"
     }
   },
   "scripts": {
@@ -37,32 +39,29 @@
   },
   "dependencies": {
     "@vue/composition-api": "^1.7.2",
-    "vite-plugin-vue2": "^2.0.3",
-    "vue": "^3.5.13",
-    "vue-demi": "^0.14.10",
+    "vue-demi": "^0.14.7",
     "vue2": "npm:vue@~2.6.14",
     "vue2.7": "npm:vue@~2.7.16",
     "vue3": "npm:vue@~3"
   },
-  "peerDependencies": {
-    "@vue/composition-api": "^1.7.2",
-    "vue": "^2.0.0 || >=3.0.0"
-  },
-  "peerDependenciesMeta": {
-    "@vue/composition-api": {
-      "optional": true
-    }
-  },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^5.2.3",
-    "@vue/tsconfig": "^0.7.0",
+    "@sinclair/typebox": "^0.32.31",
+    "@types/node": "^20.12.12",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "@vitest/coverage-v8": "^1.6.0",
+    "@vue/compiler-sfc": "^3.4.27",
+    "@vue/test-utils": "^2.4.6",
     "autoprefixer": "^10.4.19",
+    "jsdom": "^24.1.0",
     "postcss": "^8.4.38",
+    "rimraf": "^5.0.7",
     "sass": "^1.77.2",
     "tailwindcss": "^3.4.3",
-    "typescript": "~5.8.3",
-    "vite": "^6.3.5",
-    "vitest": "^3.2.4",
-    "vue-tsc": "^2.2.8"
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0",
+    "vite-plugin-dts": "^3.9.1",
+    "vite-plugin-vue2": "^2.0.3",
+    "vitest": "^1.6.0",
+    "vue-tsc": "^2.0.6"
   }
 }

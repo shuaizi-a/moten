@@ -1,8 +1,64 @@
 <template>
-  <div class="edit-block"></div>
+  <div class="edit-block">
+    <div class="left">
+      <div
+        class="menu-item"
+        v-for="(item, index) in menuList"
+        :key="index"
+        :class="{ 'is-active': index === activeMenu }"
+        @click="activeMenu = index"
+      >
+        <v-icon
+          class="menu-icon"
+          :icon="index === activeMenu ? item.iconActive : item.icon"
+        ></v-icon>
+        <div class="menu-name">{{ item.name }}</div>
+      </div>
+    </div>
+    <div class="right">
+      <el-collapse v-model="activeNames">
+        <el-collapse-item title="基础组件" name="1">
+          <edit-block-drag
+            :list="baseBlockList"
+            :sort="false"
+            :group="{ name: dragGroup, pull: 'clone', put: false }"
+          ></edit-block-drag>
+        </el-collapse-item>
+        <el-collapse-item title="高级组件" name="2">
+          <edit-block-drag
+            :list="seniorBlockList"
+            :sort="false"
+            :group="{ name: dragGroup, pull: 'clone', put: false }"
+          ></edit-block-drag>
+        </el-collapse-item>
+      </el-collapse>
+    </div>
+  </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { baseBlocks, seniorBlocks } from '@/config/block'
+import { ref } from 'vue'
+import { dragGroup } from './nested'
+
+const menuList = ref([
+  {
+    icon: 'block',
+    iconActive: 'blockActive',
+    name: '组件',
+  },
+  {
+    icon: 'kit',
+    iconActive: 'kitActive',
+    name: '套件',
+  },
+])
+const activeMenu = ref(0) // 激活的菜单索引
+const activeNames = ref(['1', '2']) // 激活的折叠面板
+
+const baseBlockList = ref(baseBlocks)
+const seniorBlockList = ref(seniorBlocks)
+</script>
 
 <style scoped lang="scss">
 .edit-block {

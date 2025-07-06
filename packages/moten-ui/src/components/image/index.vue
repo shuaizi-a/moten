@@ -2,32 +2,26 @@
 import { defineComponent } from "vue-demi";
 
 export default defineComponent({
+  name: "mo-image",
   props: {
-    src: String,
+    src: {
+      type: String,
+      default: "https://avatars.githubusercontent.com/u/1025679?s=460&v=4",
+    },
   },
   data() {
-    return {
-      value: 111,
-    };
+    return {};
   },
-  mounted() {
-    console.log(this.value);
-  },
+  mounted() {},
 });
 </script>
 
 <template>
   <div>
-    <h1 class="text-[#50d71e] text-[50px]">标题</h1>
     <img :src="src" alt="" />
   </div>
-
 </template>
 
 <style lang="scss" scoped>
-img {
-  width: 200px;
-  height: 200px;
-  margin: 0 auto;
-}
+// @import "./index.scss";
 </style>
