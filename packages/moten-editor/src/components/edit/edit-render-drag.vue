@@ -1,12 +1,12 @@
 <template>
   <draggable
-    :list="list"
-    :group="group"
-    :sort="sort"
     animation="200"
     item-key="id"
     ghost-class="ghost-class"
     class="edit-render-drag"
+    :list="list"
+    :group="group"
+    :sort="sort"
     :move="move"
   >
     <template #item="{ element }">
@@ -19,6 +19,7 @@
           <component
             :is="renderComponentCode(element)"
             :data="element.formData"
+            :children="element.children || []"
             :viewport="edit.viewport"
           ></component>
         </div>

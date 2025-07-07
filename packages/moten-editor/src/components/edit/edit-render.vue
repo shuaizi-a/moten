@@ -1,7 +1,7 @@
 <template>
   <div class="edit-render">
     <edit-render-drag :list="list" :group="dragGroup" class="render"></edit-render-drag>
-    <el-empty class="empty" v-if="!list?.length" describedby="请在左侧拖入组件到此处">
+    <el-empty class="empty" v-if="!list?.length" description="请在左侧拖入组件到此处">
       <template #image>
         <v-icon icon="dragBlank" class="icon"></v-icon>
       </template>
